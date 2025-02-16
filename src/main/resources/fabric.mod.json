@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "minecraftapi",
+  "version": "${version}",
+
+  "name": "MinecraftAPI",
+  "description": "为Fabric服务端提供一些外部可访问的HTTP接口",
+  "authors": [],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/minecraftapi/icon.png",
+
+  "environment": "server",
+  "entrypoints": {
+    "main": ["com.powercess.minecraftapi.Minecraftapi"]
+  },
+
+  "mixins": [
+    "minecraftapi.mixins.json"
+    ,{
+      "config": "minecraftapi.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
